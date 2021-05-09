@@ -1,8 +1,6 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_app/select_page.dart';
 import 'package:flutter_ringtone_player/flutter_ringtone_player.dart';
-
 
 void main() {
   runApp(MyApp());
@@ -29,45 +27,40 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-
 class _MyHomePageState extends State<MyHomePage> {
-  List<String> titleList = ["アラーム設定","アラームのリスト","グループ検索"];
+  List<String> titleList = ["アラーム設定", "アラームのリスト", "グループ検索"];
 
   //アプリのUI部分
   @override
   Widget build(BuildContext context) {
-
     var user = "Guest";
 
     return Scaffold(
       appBar: AppBar(
-
         title: Text("ログインページ"),
       ),
       body: Container(
         child: Column(
           children: [
             TextField(
-              decoration: InputDecoration(
-                  hintText: "ユーザー名を入力してください"
-              ),
+              decoration: InputDecoration(hintText: "ユーザー名を入力してください"),
               onChanged: (text) {
                 print("User : $text");
                 user = text;
               },
             ),
             RaisedButton(
-              child: Text("ログインする"),
+                child: Text("ログインする"),
                 onPressed: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => SelectPage(
-                  user: user,
-                )));
-            })
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => SelectPage(
+                                user: user,
+                              )));
+                })
           ],
         ),
-
-
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -81,7 +74,6 @@ class _MyHomePageState extends State<MyHomePage> {
           );
           // FlutterRingtonePlayer.playAlarm();
           // FlutterRingtonePlayer.playRingtone();
-
         },
         tooltip: 'Increment',
         child: Icon(Icons.add),
@@ -89,4 +81,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-

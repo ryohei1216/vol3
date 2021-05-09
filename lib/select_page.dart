@@ -72,6 +72,7 @@ class _CreateSelectPage extends State<SelectPage> {
       if (message == "all awake") {
         debugPrint("Stop alarm");
         FlutterRingtonePlayer.stop();
+        _channel.sink.close();
       }
     });
 

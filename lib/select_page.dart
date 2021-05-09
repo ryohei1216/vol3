@@ -79,7 +79,7 @@ class _CreateSelectPage extends State<SelectPage> {
     final userId = _prefs.getString("userId");
     // FIXME: どこかに保存している、鳴っているアラームのグループのid入れる
     final groupId = "327f98dc-c24d-4181-a72d-c84e75a5c6c7";
-    _channel.sink.add("$userId,$groupId}");
+    _channel.sink.add("$userId,$groupId");
   }
 
   Widget build(BuildContext context) {

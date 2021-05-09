@@ -75,10 +75,9 @@ class _CreateSelectPage extends State<SelectPage> {
       }
     });
 
-    // final userId = "b8202fde-a8fb-4522-bf76-b56f4a70c598";
     final userId = _prefs.getString("userId");
+    // FIXME: どこかに保存している、鳴っているアラームのグループのid入れる
     final groupId = "327f98dc-c24d-4181-a72d-c84e75a5c6c7";
-    debugPrint(userId);
     _channel.sink.add("$userId,$groupId}");
   }
 
